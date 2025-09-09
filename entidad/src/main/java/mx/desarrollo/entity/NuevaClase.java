@@ -4,7 +4,7 @@ public class NuevaClase {
     /*Este es un cambio muy importante*/
 
     public static void main(String[] args){
-        int numero = 10;
+        int numero = 100;
 
         for(int i = 0; i <= numero; i++){
             System.out.println(i);

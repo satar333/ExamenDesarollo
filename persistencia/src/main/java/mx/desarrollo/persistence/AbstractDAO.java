@@ -91,20 +91,6 @@ public abstract class AbstractDAO<T> {
         );
     }
 
-    public T findByOneParameterUnique(String value, String field) {
-        String jpql = "SELECT e FROM " + entityClass.getSimpleName()
-                + " e WHERE e." + field + " = :value";
-        return execute(em -> {
-            try {
-                return em.createQuery(jpql, entityClass)
-                        .setParameter("value", value)
-                        .getSingleResult();
-            } catch (NoResultException ex) {
-                return null;
-            }
-        });
-    }
-
     // Find by field value (generic single-field query)
     public List<T> findByField(String fieldName, Object value) {
         return findByOneParameter(value, fieldName);
