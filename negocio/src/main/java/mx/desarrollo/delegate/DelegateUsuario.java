@@ -10,9 +10,9 @@ public class DelegateUsuario {
         Usuario usuario = new Usuario();
         List<Usuario> usuarios = ServiceLocator.getInstanceUsuarioDAO().findAll();
 
-        for(Usuario us:usuarios){
-            if(us.getContrasena().equalsIgnoreCase(password) && us.getCorreo().equalsIgnoreCase(correo)){
-                usuario = us;
+        for(Usuario usu:usuarios){
+            if(usu.getContrasena().equalsIgnoreCase(password) && usu.getCorreo().equalsIgnoreCase(correo)){
+                usuario = usu;
             }
         }
         return usuario;
